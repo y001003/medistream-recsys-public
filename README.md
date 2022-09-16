@@ -141,8 +141,4 @@ python -m backend.app
 <img width="500" height="300" alt="Git Pull Request" src="https://user-images.githubusercontent.com/41297473/172410317-d2697b7e-4889-4672-a064-b653095d17aa.gif">
 
 ## 📜 Reference
-- [Liang, Dawen, et al. "Variational autoencoders for collaborative filtering." Proceedings of the 2018 world wide web conference. 2018.](https://dl.acm.org/doi/pdf/10.1145/3178876.3186150)
-- [Kang, Wang-Cheng, and Julian McAuley. "Self-attentive sequential recommendation." 2018 IEEE International Conference on Data Mining (ICDM). IEEE, 2018.](https://arxiv.org/pdf/1808.09781.pdf)
-- [Sedhain, Suvash, et al. "Autorec: Autoencoders meet collaborative filtering." Proceedings of the 24th international conference on World Wide Web. 2015.](https://users.cecs.anu.edu.au/~akmenon/papers/autorec/autorec-paper.pdf)
-- [beerinfo](https://beerinfo.net/)
-- [ratebeer](https://www.ratebeer.com/)
+https://zepellin.atlassian.net/l/cp/Aa2Zd59F
