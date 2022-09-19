@@ -9,7 +9,7 @@
 
 ## ✨ 프로젝트 산출물
 
-- [기획안]([메디스트림기획서 발표용.pdf](https://github.com/Recommend-System-15/year_dream_2/files/9596650/default.pdf)
+- [기획서 발표용.pdf](https://github.com/Recommend-System-15/year_dream_2/files/9596650/default.pdf)
 
 - [WRAP-UP REPORT](https://poised-speedwell-186.notion.site/Final-WRAP-UP-REPORT-f32fcafa56ce4ce78132058aed8a56aa)
 - [발표 자료](https://drive.google.com/file/d/1dRIKJF2TVSu2sV3okv2YIAPSMI-I8Ayu/view?usp=sharing)
