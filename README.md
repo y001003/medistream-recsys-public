@@ -137,7 +137,7 @@ python -m backend.app
 - Github Issues 기반 작업 진행
 <img width="500" height="300" alt="Git Issues" src="https://user-images.githubusercontent.com/41297473/172408276-b164089a-6f57-4ad3-ad4f-d0772bdf08bb.gif">
 
-- Github Projects, Notion의 칸반 보드를 통한 일정 관리
+- Github Projects, Jira, Confluence의 칸반 보드를 통한 일정 관리
 <img width="500" height="300" alt="Git Projects" src="https://user-images.githubusercontent.com/41297473/172408451-0bae191b-043a-4130-b61b-3790fdf79117.gif">
 <br><img width="500" height="300" alt="notion_kanban" src="https://user-images.githubusercontent.com/41297473/172409727-ec1e817c-6711-42ef-8b18-32c34bb5574d.gif"></br>
 
