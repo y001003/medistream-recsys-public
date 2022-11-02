@@ -37,7 +37,7 @@
 
 ## 실행방법
 
-- order data와 product 파일 path와 결과 csv 저장 경로를 입력 후 실행
+- order data와 product 파일의 path와 결과 csv 저장 경로를 입력 후 실행
 ```
 python3 model.py --order_path --product_path --result_download_path
 ```
