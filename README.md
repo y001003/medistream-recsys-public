@@ -1,4 +1,4 @@
-# final-project-level3-recsys-10
+# 메디스트림 
 
 ## ❗ 프로젝트 소개
 - 행동 기반으 바탕으로 개인화 추천 시스템 구축하기
@@ -128,11 +128,11 @@ python -m backend.app
 
 
 ## 🎞 Demo
-- 서빙을 위한 프론트 페이지
-<img width="500" height="300" alt="Front Page" src="https://user-images.githubusercontent.com/41297473/172408055-1774782b-848f-435d-bd93-048ae9a0668e.gif">
+- 추천을 위한 프론트 페이지 : ALS 기반의 추천되는 개인화 책 목록
+<img width="1900" alt="image" src="https://user-images.githubusercontent.com/68417368/199170013-13b2fc45-0b29-4431-87a7-0a3531493d89.png">
 
-- 유저의 Cold start를 해결하기 위한 페이지
-<img width="500" height="300" alt="Cold start" src="https://user-images.githubusercontent.com/41297473/172411181-f71e3d52-edf7-485d-a070-dd9764475c12.gif">
+- 책의 상세페이지 하단에 추천 책 목록 : LDA 기반의 비슷한 책 추천
+<img width="1959" alt="image" src="https://user-images.githubusercontent.com/68417368/199170349-d37a8740-a4ad-4816-b7c7-8eba09247906.png">
 
 ## 👨‍👩‍👧‍👧 Collaborate Working
 - Github Issues 기반 작업 진행
