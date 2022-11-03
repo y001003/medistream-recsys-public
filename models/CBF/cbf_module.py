@@ -13,7 +13,7 @@ from tqdm import tqdm # 작업 프로세스 시각화
 import re # 문자열 처리를 위한 정규표현식 패키지
 from gensim import corpora # 단어 빈도수 계산 패키지
 import gensim # LDA 모델 활용 목적
-import pyLDAvis # LDA 시각화용 패키지
+# import pyLDAvis # LDA 시각화용 패키지
 from collections import Counter # 단어 등장 횟수 카운트
 from gensim.models.coherencemodel import CoherenceModel
 import pickle
@@ -22,14 +22,18 @@ import argparse
 
 parser = argparse.ArgumentParser(description='Argparse Tutorial')
 parser.add_argument('--title', type=str)
+parser.add_argument('--book', type=bool, default=True)
+parser.add_argument('--article', type=bool, default=True)
 args = parser.parse_args()
 
 def result():
     name = args.title
+    book = args.book
+    article = args.article
     # load data
-    vectors = pd.read_json("/home/user_1/medistream-recsys-private/data/CBF/final_tokens_2.json")
-    df1 = pd.read_json('/home/user_1/medistream-recsys-private/data/CBF/df_book_clean.json')
-    df2 = pd.read_json('/home/user_1/medistream-recsys-private/data/CBF/article_sum.json')
+    vectors = pd.read_json("../../data/CBF/final_tokens_2.json")
+    df1 = pd.read_json('../../data/CBF/df_book_clean.json')
+    df2 = pd.read_json('../../data/CBF/article_sum.json')
 
     df1 = df1.rename(columns={'_id':'id'})
     df_des = pd.concat([df1[['id','name_x','description']].rename(columns={'name_x':'title'}),df2[['id','title','content_tag_removed']].rename(columns={'content_tag_removed':'description'})], axis=0)
@@ -37,10 +41,7 @@ def result():
 
     # Tokenize
     des_tokenized = []
-    # for doc in tqdm(df_des['description']):
-    #     tokens = [token for token in mecab.nouns(doc) if len(token) > 1] # 각 행(책,아티클)마다의 형태소 분석 명사 추출
-    #     des_tokenized.append(tokens)
-    with open('/home/user_1/medistream-recsys-private/demo/static/data/des_tokenized.pkl','rb') as f:
+    with open('../../data/CBF/des_tokenized.pkl','rb') as f:
         des_tokenized = pickle.load(f)
 
     entri_token = []
@@ -52,11 +53,11 @@ def result():
     corpus = [dictionary.doc2bow(text) for text in des_tokenized] # 각 문서마다 각 명사의 갯수 분석
     
     num_topics = 35
-    lda_model_final = models.LdaModel.load('/home/user_1/medistream-recsys-private/data/CBF'+'/models6/ldamodels_bow_'+str(num_topics)+'.lda')
+    lda_model_final = models.LdaModel.load('../../data/CBF'+'/models6/ldamodels_bow_'+str(num_topics)+'.lda')
     corpus_lda_model = lda_model_final[corpus]
     index = similarities.MatrixSimilarity(lda_model_final[corpus])
 
-    def book_recommender_book(title):
+    def book_recommender_book(title, book=True, article=True):
         books_checked = 0
         for i in range(len(df_des)):
             recommendation_scores = []
@@ -72,35 +73,71 @@ def result():
                     recommendation_score = [df_des.iloc[book_num,2],df_des.iloc[book_num,3], sim[1]]
                     recommendation_scores.append(recommendation_score)
                 
-                recommendation_book = sorted(recommendation_scores[:373], key=lambda x: x[2], reverse=True) # sim score 값에 따라 정렬
-                print("Your book's most prominent tokens are:")
-                article_tokens = corpus[i] # 해당 문서의 단어 토큰들
-                sorted_tokens = sorted(article_tokens, key=lambda x: x[1], reverse=True) # 단어 토큰의 빈도로 정렬
-                sorted_tokens_10 = sorted_tokens[:10]
-                for i in range(len(sorted_tokens_10)):
-                    print("Word {} (\"{}\") appears {} time(s).".format(sorted_tokens_10[i][0], 
-                                                                dictionary[sorted_tokens_10[i][0]], 
-                                                                sorted_tokens_10[i][1]))
-                print('-----')
-                print("Your book's most prominant topic is:")
-                print(lda_model_final.print_topic(max(lda_vectors, key=lambda item: item[1])[0]))
-                print('-----')
-                print('Here are your recommendations for "{}":'.format(title))
-                for i in recommendation_book[1:15]:
-                    print(i[1],i[2])
-                    
-
-                return recommendation_book
+                if (book == True) and (article==True) :
+                    recommendation = sorted(recommendation_scores, key=lambda x: x[2], reverse=True) # sim score 값에 따라 정렬
+                    print("Your book's most prominent tokens are:")
+                    article_tokens = corpus[i] # 해당 문서의 단어 토큰들
+                    sorted_tokens = sorted(article_tokens, key=lambda x: x[1], reverse=True) # 단어 토큰의 빈도로 정렬
+                    sorted_tokens_10 = sorted_tokens[:10]
+                    for i in range(len(sorted_tokens_10)):
+                        print("Word {} (\"{}\") appears {} time(s).".format(sorted_tokens_10[i][0], 
+                                                                    dictionary[sorted_tokens_10[i][0]], 
+                                                                    sorted_tokens_10[i][1]))
+                    print('-----')
+                    print("Your book's most prominant topic is:")
+                    print(lda_model_final.print_topic(max(lda_vectors, key=lambda item: item[1])[0]))
+                    print('-----')
+                    print('Here are your recommendations for "{}":'.format(title))
+                    for i in recommendation[1:15]:
+                        print(i[1],i[2])  
             
+                elif (book == True) and (article == False) :
+                    recommendation = sorted(recommendation_scores[:373], key=lambda x: x[1], reverse=True) # sim score 값에 따라 정렬
+                    print("Your book's most prominent tokens are:")
+                    article_tokens = corpus[i] # 해당 문서의 단어 토큰들
+                    sorted_tokens = sorted(article_tokens, key=lambda x: x[2], reverse=True) # 단어 토큰의 빈도로 정렬
+                    sorted_tokens_10 = sorted_tokens[:10]
+                    for i in range(len(sorted_tokens_10)):
+                        print("Word {} (\"{}\") appears {} time(s).".format(sorted_tokens_10[i][0], 
+                                                                    dictionary[sorted_tokens_10[i][0]], 
+                                                                    sorted_tokens_10[i][1]))
+                    print('-----')
+                    print("Your book's most prominant topic is:")
+                    print(lda_model_final.print_topic(max(lda_vectors, key=lambda item: item[1])[0]))
+                    print('-----')
+                    print('Here are your recommendations for "{}":'.format(title))
+                    for i in recommendation[1:15]:
+                        print(i[1],i[2])           
+
+                elif (book == False) and (article == True) :
+                    recommendation = sorted(recommendation_scores[373:], key=lambda x: x[2], reverse=True) # sim score 값에 따라 정렬
+                    print("Your book's most prominent tokens are:")
+                    article_tokens = corpus[i] # 해당 문서의 단어 토큰들
+                    sorted_tokens = sorted(article_tokens, key=lambda x: x[1], reverse=True) # 단어 토큰의 빈도로 정렬
+                    sorted_tokens_10 = sorted_tokens[:10]
+                    for i in range(len(sorted_tokens_10)):
+                        print("Word {} (\"{}\") appears {} time(s).".format(sorted_tokens_10[i][0], 
+                                                                    dictionary[sorted_tokens_10[i][0]], 
+                                                                    sorted_tokens_10[i][1]))
+                    print('-----')
+                    print("Your book's most prominant topic is:")
+                    print(lda_model_final.print_topic(max(lda_vectors, key=lambda item: item[1])[0]))
+                    print('-----')
+                    print('Here are your recommendations for "{}":'.format(title))
+                    for i in recommendation[1:15]:
+                        print(i[1],i[2])  
+             
+                else :
+                    print("sorry, you should select either book or article or both")
             else:
                 books_checked +=1
-            
-            # 만약 for문을 다돌았는데 못찾았을 경우
-            if books_checked == len(df_des): 
-                book_suggestions = []
-                print('Sorry, but it looks like "{}" is not available.'.format(title))
+        
+        # 만약 for문을 다돌았는데 못찾았을 경우
+        if books_checked == len(df_des): 
+            book_suggestions = []
+            print('Sorry, but it looks like "{}" is not available.'.format(title))
 
-    recommendation_book = book_recommender_book(name)
+    recommendation_book = book_recommender_book(name,book,article)
 
 
 if __name__ == "__main__":
