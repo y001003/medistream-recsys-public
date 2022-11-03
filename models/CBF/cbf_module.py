@@ -90,6 +90,7 @@ def result():
                     print('Here are your recommendations for "{}":'.format(title))
                     for i in recommendation[1:15]:
                         print(i[1],i[2])  
+                    return recommendation
             
                 elif (book == True) and (article == False) :
                     recommendation = sorted(recommendation_scores[:373], key=lambda x: x[1], reverse=True) # sim score 값에 따라 정렬
@@ -107,7 +108,8 @@ def result():
                     print('-----')
                     print('Here are your recommendations for "{}":'.format(title))
                     for i in recommendation[1:15]:
-                        print(i[1],i[2])           
+                        print(i[1],i[2])   
+                    return recommendation       
 
                 elif (book == False) and (article == True) :
                     recommendation = sorted(recommendation_scores[373:], key=lambda x: x[2], reverse=True) # sim score 값에 따라 정렬
@@ -125,7 +127,8 @@ def result():
                     print('-----')
                     print('Here are your recommendations for "{}":'.format(title))
                     for i in recommendation[1:15]:
-                        print(i[1],i[2])  
+                        print(i[1],i[2])
+                    return recommendation
              
                 else :
                     print("sorry, you should select either book or article or both")
@@ -138,6 +141,8 @@ def result():
             print('Sorry, but it looks like "{}" is not available.'.format(title))
 
     recommendation_book = book_recommender_book(name,book,article)
+
+    return recommendation_book
 
 
 if __name__ == "__main__":
