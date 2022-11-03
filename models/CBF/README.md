@@ -4,7 +4,7 @@ cbf_module.py
 ### 작동 방식
 1. raw data에서 input 값과 같은 타이틀의 index를 찾는다.
 2. title에 넣은 아이템의 각 topic들에 대한 확률값을 불러온다.
-3. 이 확률값을 가지고 코사인 유사도가 가장 높은 순으로 15개의 아이템을 불러오게 된다.
+3. 이 확률값을 가지고 코사인 유사도가 가장 높은 순으로 15개의 아이템을 보여주고 return으로 [product_number, title, cosine_similarity] 값 반환
 ### Run
 <code>python cbf_module.py --title --book --article</code>
 ### Return
