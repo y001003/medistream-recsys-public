@@ -98,13 +98,13 @@ class train():
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='CF recommendation')
-    parser.add_argument('--order_path', default='/fastcampus-data/select_column_version_4.json')
-    parser.add_argument('--product_path', default='/fastcampus-data/products/products.json')
-    parser.add_argument('--factor', default=40)
-    parser.add_argument('--regularization', default=0.005)
-    parser.add_argument('--iteration', default=50)
-    parser.add_argument('--top', default=20)
-    parser.add_argument('--result_download_path', default='/home/user_3/medistream-recsys/models/CF/')
+    parser.add_argument('--order_path', type=str,default='../../data/select_column_version_4.json')
+    parser.add_argument('--product_path', type=str,default='../../data/products.json')
+    parser.add_argument('--factor', type=int, default=40)
+    parser.add_argument('--regularization', type=float , default=0.005)
+    parser.add_argument('--iteration', type=int, default=50)
+    parser.add_argument('--top', type=int, default=20)
+    parser.add_argument('--result_download_path', type=str, default='./')
     args = parser.parse_args()
 
     # 데이터 로드
@@ -123,4 +123,4 @@ if __name__ == "__main__":
             args.top)
 
     evaluate_df,predict_list = model_train.train()
-    # predict_list.to_csv(args.result_download_path+'predict_list.csv')
+    predict_list.to_csv(args.result_download_path+'predict_list1.csv')
