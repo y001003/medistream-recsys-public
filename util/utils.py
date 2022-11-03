@@ -1,16 +1,3 @@
-import pandas as pd
-import numpy as np
-from tqdm import tqdm
-
-import scipy.sparse as sparse
-import random
-import implicit
-from implicit.als import AlternatingLeastSquares as ALS
-from implicit.lmf import LogisticMatrixFactorization as LMF
-
-
-
-
 # drop columns 전처리
 def drop_columns(delete_columns:list,df:pd.DataFrame) -> pd.DataFrame:
     # 회의 때 얘기한 컬럼 전처리
