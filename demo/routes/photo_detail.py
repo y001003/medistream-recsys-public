@@ -33,9 +33,9 @@ def result():
     name = request.args.get("name")
 
     # load data
-    vectors = pd.read_json("/home/user_1/medistream-recsys-private/data/CBF/final_tokens_2.json")
-    df1 = pd.read_json('/home/user_1/medistream-recsys-private/data/CBF/df_book_clean.json')
-    df2 = pd.read_json('/home/user_1/medistream-recsys-private/data/CBF/article_sum.json')
+    vectors = pd.read_json("/home/user_1/medistream-recsys-private/demo/static/data/final_tokens_2.json")
+    df1 = pd.read_json('/home/user_1/medistream-recsys-private/demo/static/data/df_book_clean.json')
+    df2 = pd.read_json('/home/user_1/medistream-recsys-private/demo/static/data/article_sum.json')
 
     df1 = df1.rename(columns={'_id':'id'})
     df_des = pd.concat([df1[['id','name_x','description']].rename(columns={'name_x':'title'}),df2[['id','title','content_tag_removed']].rename(columns={'content_tag_removed':'description'})], axis=0)
