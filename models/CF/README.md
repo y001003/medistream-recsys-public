@@ -23,17 +23,19 @@
 - 관련 라이브러리 및 함수가 있는 util 파일
 
 **[predict_list.csv](predict_list.csv)**
-- ensemble 결과 추천된 15개 아이템 결과가 저장
-- csv 형식으로 유저와 아이템 id 식별 코드 정보가 들어가 있습니다.
+- ensemble 결과 추천된 15개 아이템 결과가 csv 형식으로 유저id 식별 코드와 함께 저장
 
 ## 최종 결과
 
 - base model 중 가장 점수가 높았던 Most Popular 과 비교
+- 앙상블 모델이 가장 높은 NDCG 점수와 entropy 점수 분포를 보이는 것을 확인
 
 |model| NDCG@15 | entropy@15 |
 |---|-------|--------:|
 |Ensemble| 0.06151| 3.33082 |  
 |base-model-MP| 0.06126| 2.70805 |
+|MF| 0.0530| 3.3352 |
+|LMF| 0.0542| 3.5511 |
 
 ## 실행방법
 
