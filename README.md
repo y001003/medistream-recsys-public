@@ -97,6 +97,7 @@
 - MF, LMF 는 NDCG 점수가 base-model-mp 비해 낮지만 entropy 점수가 높음
 - LMF(predict@12) 와 base-model-mp(top3) 앙상블 진행
 - base-model-mp 대비 앙상블 모델이 가장 높은 NDCG 점수와 entropy 점수 분포를 보여 성능 개선 확인
+
 ## 6) 적용 방안
 <img width="650" height="" alt="추천순" src="https://user-images.githubusercontent.com/86936634/200104839-a80d111e-3ea7-4d59-9f8b-2d6c0a596177.png">
 
@@ -122,7 +123,7 @@
 
 ## 2) LDA 토픽 모델 선정 이유 및 학습 방법
 - 토픽 모델링 종류로는 LSA, LDA 두가지 존재
-- LAS 경우 문맥을 반영한 토픽 모델링이며 LDA는 확률기반 토픽 모델링이기 때문에 한의학 도메인 정보를 잘 표현하기 위해서는 LDA 사용하는 것이 좋다고 판단
+- LSA 경우 문맥을 반영한 토픽 모델링이며 LDA는 확률기반 토픽 모델링이기 때문에 한의학 도메인 정보를 잘 표현하기 위해서는 LDA 사용하는 것이 좋다고 판단
 - Coherence Score 와 Perplexity Score를 사용하여 토픽 개수를 선정하였으며 35개의 주제 선택하여 학습 진행
 
 ## 3) 추천 방법
