@@ -29,22 +29,22 @@
 ## 협업 방법
 - 폐쇄형 플랫폼이기 때문에 데이터 보안 문제로 GCP 서버를 통해서만 작업을 진행
 - GCP 서버를 이용하여 각 팀원 별 공간을 할당하였으며 base로 jupyter notebook 환경에서 작업을 진행
-- Jira Cofulence 및 github project 이용하여 작업 공유 및 협업 진행
-- [Cofulence](https://zepellin.atlassian.net/wiki/spaces/1515/pages) ,[Github Project](https://github.com/orgs/Recommend-System-15/projects/1/views/2) 
+- Jira Confulence 및 github project 이용하여 작업 공유 및 협업 진행
+- [Confulence](https://zepellin.atlassian.net/wiki/spaces/1515/pages) ,[Github Project](https://github.com/orgs/Recommend-System-15/projects/1/views/2) 
 
 ## 사양
 - Disk 200g, Rem 64g, 8 core Intel(R) Xeon(R) CPU @ 2.20GHz, Ubuntu 18.04.6 LTS
 
 # 📁 데이터
 
-<img width="572" alt="스크린샷 2022-11-04 오후 11 02 57" src="https://user-images.githubusercontent.com/86936634/199991521-08c3d26f-d514-426d-aa4d-ae91d6f894ab.png">
+<img width="572" alt="order 데이터" src="https://user-images.githubusercontent.com/86936634/199991521-08c3d26f-d514-426d-aa4d-ae91d6f894ab.png">
 
 - 전체 아이템 중 '도서' 구매 데이터만 사용
 - 구매 데이터 중에서도 paid가 완료되고, cancelled 되지 않은 '완전한' 구매 기록만 사용
 - 모델 학습에 있어서 비교적 적은 데이터임을 확인
 - CF 모델 학습하는데 사용
 
-<img width="605" alt="스크린샷 2022-11-04 오후 11 04 56" src="https://user-images.githubusercontent.com/86936634/199992682-2c569c6e-eb27-46be-b9fc-383e1982f23a.png">
+<img width="605" alt="article book 데이터" src="https://user-images.githubusercontent.com/86936634/199992682-2c569c6e-eb27-46be-b9fc-383e1982f23a.png">
 
 - Article : 메디스트림 상품 리뷰 및 커뮤니티 글
 - Book : 도서의 context 한 메타 정보
@@ -99,7 +99,7 @@
 - base-model-mp 대비 앙상블 모델이 가장 높은 NDCG 점수와 entropy 점수 분포를 보여 성능 개선 확인
 
 ## 6) 적용 방안
-<img width="650" height="" alt="추천순" src="https://user-images.githubusercontent.com/86936634/200104839-a80d111e-3ea7-4d59-9f8b-2d6c0a596177.png">
+<img width="650" alt="추천순" src="https://user-images.githubusercontent.com/86936634/200104839-a80d111e-3ea7-4d59-9f8b-2d6c0a596177.png">
 
 - 메디 마켓 추천순 버튼을 만들고 유저가 클릭시 행동기반 추천 진행
 - MF 모델 기반 다양한 유저에게 개인화 및 다양한 상품 추천
