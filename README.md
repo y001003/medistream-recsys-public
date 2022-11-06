@@ -1,10 +1,10 @@
 # 메디스트림 기업 과제
-## 기업 소개
+## 🔥 기업 소개
 - 전국 한의사 62%가 가입한 한의사를 위한 폐쇄형 커머스 플랫폼 서비스
 - 커뮤니티, 커머스, 클래스, 경영지원 등의 서비스 제공
 - [기업 홈페이지](https://auth.medistream.co.kr/login?client_id=01FWFWVMHNSPW7D5PE8WY6R6H2&redirect_uri=https://medistream.co.kr/auth?redirect=Lw%3D%3D&response_type=code)
 
-## 기업 요청
+## 🥸 기업 요청
 ```
 - 도서 카테고리에 대한 추천
 - 도서는 인기있는 상품이 주로 판매되고 있고, 다양한 상품이 추천될 수 있도록   
@@ -12,7 +12,7 @@
 - 또한, 도서 및 아티클 메타 정보 활용을 통한 추천을 원함
 ```
 
-## 프로젝트 목표
+## 📌 프로젝트 목표
 - 다양한 상품을 추천하여 판매되는 상품의 종류를 넓히는 것 목표
 - 유저 행동 기반으로 학습을 하며 다양한 추천이 가능하도록 CF 기반 추천 구현
 - 도서 및 아티클 메타 정보를 활용한 CBF 추천 구현
@@ -20,11 +20,11 @@
 ## 📅 프로젝트 수행 기간 
 - 2022.09.05 ~ 2022.10.23
 
-## 👋 팀원 소개
+## 🙌 팀원 소개
 
 |                                                  [박영수](https://github.com/y001003)                                                   |                                                                          [이세현](https://github.com/qsdcfd)                                                                           |                                                 [정혜빈](https://github.com/HYEBINess)                                                  |                                                                        [최진수](https://github.com/jinsuc28)                                                                         |                                                                                                                                           |
 | :-------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------: |
-| [![Avatar]()](https://github.com/y001003) | [![Avatar]()](https://github.com/qsdcfd) | [![Avatar]()](https://github.com/HYEBINess) | [![Avatar]()](https://github.com/jinsuc28) | 
+| [![Avatar](https://avatars.githubusercontent.com/u/68417368?v=4)](https://github.com/y001003) | [![Avatar](https://avatars.githubusercontent.com/u/86671456?v=4)](https://github.com/qsdcfd) | [![Avatar](https://avatars.githubusercontent.com/u/97460313?v=4)](https://github.com/HYEBINess) | [![Avatar](https://avatars.githubusercontent.com/u/86936634?v=4)](https://github.com/jinsuc28) | 
 
 ## 협업 방법
 - 폐쇄형 플랫폼이기 때문에 데이터 보안 문제로 GCP 서버를 통해서만 작업을 진행
@@ -142,7 +142,7 @@
 <img width="589" alt="최종 기대 효과" src="https://user-images.githubusercontent.com/86936634/199998364-79b02dcc-3fcf-4abc-8e6b-cb3f361fb17f.png">
 
 
-## 🏢 Structure
+## 🛠️ Structure
 ```
 medistream-recsys
 ├── LICENSE
@@ -196,30 +196,20 @@ medistream-recsys
 └── 💾 requirements.txt
 ```
 
-## 상세 설명
+## 📜 상세 설명
 ### 1. EDA
 
-- [📜 EDA README](./EDA/README.md)
-- [📜 CF README](./CF/README.md)
-- [📜 CBF README](./CBF/README.md)
+- [EDA ](./notebook/EDA/)
+- [CF ](./notebook/CF/README.md)
+- [CBF](./notebook/CBF/README.md)
 
 ### 2. Model
 
-- [📜 CF Model README](./Models/CF/)
-- [📜 CBF Model README](./Models/CBF/)
+- [CF Model README](./models/CF/README.md)
+- [CBF Model README](./models/CBF/README.md)
 
-## 🏃‍ 사용 라이브러리
+## 📦 사용 라이브러리
 - [requirements.txt](requirements.txt)
 
 ## ✨ 프로젝트 산출물
-
-- [기획서 발표용.pdf](https://github.com/Recommend-System-15/year_dream_2/files/9596650/default.pdf)
-- [메디스트림 중간발표.pdf](https://github.com/Recommend-System-15/medistream-recsys/files/9846149/default.pdf)
-
-- [WRAP-UP REPORT](https://poised-speedwell-186.notion.site/Final-WRAP-UP-REPORT-f32fcafa56ce4ce78132058aed8a56aa)
-- [발표 자료](https://drive.google.com/file/d/1dRIKJF2TVSu2sV3okv2YIAPSMI-I8Ayu/view?usp=sharing)
-
-## 📜 Reference
-https://zepellin.atlassian.net/l/cp/Aa2Zd59F
-
-
+- [최종 발표 자료]((https://github.com/Recommend-System-15/medistream-recsys/files/9946007/15.Medistream.pdf))
