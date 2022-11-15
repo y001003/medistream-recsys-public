@@ -36,6 +36,7 @@
 - Disk 200g, Rem 64g, 8 core Intel(R) Xeon(R) CPU @ 2.20GHz, Ubuntu 18.04.6 LTS
 
 # 📁 데이터
+❗<private>
 
 <img width="572" alt="order 데이터" src="https://user-images.githubusercontent.com/86936634/199991521-08c3d26f-d514-426d-aa4d-ae91d6f894ab.png">
 
@@ -147,7 +148,7 @@
 medistream-recsys
 ├── LICENSE
 ├── README.md
-├── 📁 data
+├── 📁 data❗(private)
 │   ├── 📁 CBF
 │   │   ├── 💾 article_sum.json
 │   │   ├── 💾 book_categorize.csv
