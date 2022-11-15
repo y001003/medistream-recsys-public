@@ -1,4 +1,4 @@
-# CBF(Contents Based Filtering) - LDA model
+# CBF(Contents Based Filtering) - LDA model 
 
 ## ipynb 파일 세부 설명
 LDA 모델을 이용하여 CBF를 구현한 과정 및 세부 설명
@@ -11,7 +11,7 @@ LDA 모델을 이용하여 CBF를 구현한 과정 및 세부 설명
 5. Recommender
 
 ### 1. Load Data
-- data/CBF 폴더에서 필요한 부분이 추출된 json파일 로드  
+- data/CBF 폴더에서 필요한 부분이 추출된 json파일 로드(private)  
 - 각 파일들은 bookandlecture.json과 article.json에서 description 혹은 content column에서 정규표현식을 이용하여    
 tag 등 내용과 관련 없는 context들을 한번 걸러낸 파일
 
